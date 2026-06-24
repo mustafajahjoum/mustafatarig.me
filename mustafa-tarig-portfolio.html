@@ -1,0 +1,1297 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mustafa Tarig — Digital Transformation Manager | CRM Architect | AI Builder</title>
+<meta name="description" content="Mustafa Tarig — Digital Transformation Leader, CRM Architect, AI Automation Builder. 8+ years building enterprise systems in Dubai, UAE.">
+<meta property="og:title" content="Mustafa Tarig — Digital Transformation Manager">
+<meta property="og:description" content="Building CRM ecosystems, AI automations, and enterprise solutions that drive growth.">
+<meta property="og:type" content="website">
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap');
+
+  :root {
+    --bg: #04070D;
+    --bg2: #080D1A;
+    --bg3: #0C1220;
+    --cyan: #00E5FF;
+    --violet: #7B61FF;
+    --mint: #00FFAE;
+    --white: #FFFFFF;
+    --muted: #9CA3AF;
+    --border: rgba(255,255,255,0.07);
+    --border-lit: rgba(0,229,255,0.25);
+    --glow-cyan: 0 0 40px rgba(0,229,255,0.15);
+    --glow-violet: 0 0 40px rgba(123,97,255,0.15);
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--bg);
+    color: var(--white);
+    font-family: 'Inter', sans-serif;
+    font-size: 16px;
+    line-height: 1.6;
+    overflow-x: hidden;
+  }
+
+  /* ─── PRELOADER ─── */
+  #preloader {
+    position: fixed; inset: 0; z-index: 9999;
+    background: var(--bg);
+    display: flex; flex-direction: column;
+    align-items: center; justify-content: center;
+    gap: 12px;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 13px;
+    color: var(--cyan);
+  }
+  #preloader .boot-line {
+    opacity: 0;
+    transform: translateY(4px);
+    animation: bootIn 0.3s ease forwards;
+    white-space: nowrap;
+  }
+  #preloader .cursor { animation: blink 0.8s step-end infinite; }
+  @keyframes bootIn { to { opacity: 1; transform: translateY(0); } }
+  @keyframes blink { 0%,100%{opacity:1} 50%{opacity:0} }
+  #preloader .logo-pre {
+    font-size: 28px;
+    font-weight: 700;
+    letter-spacing: -1px;
+    color: var(--white);
+    margin-bottom: 24px;
+    opacity: 0;
+    animation: bootIn 0.5s 0.2s ease forwards;
+  }
+  #preloader.fade-out { animation: fadeOut 0.6s ease forwards; }
+  @keyframes fadeOut { to { opacity: 0; pointer-events: none; } }
+
+  /* ─── NAV ─── */
+  nav {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 0 5vw;
+    height: 64px;
+    background: rgba(4,7,13,0.8);
+    backdrop-filter: blur(20px);
+    border-bottom: 1px solid var(--border);
+    transition: all 0.3s;
+  }
+  .nav-logo {
+    font-weight: 700; font-size: 18px; letter-spacing: -0.5px;
+    background: linear-gradient(90deg, var(--cyan), var(--violet));
+    -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+    text-decoration: none;
+  }
+  .nav-links { display: flex; gap: 32px; list-style: none; }
+  .nav-links a {
+    color: var(--muted); text-decoration: none; font-size: 14px; font-weight: 500;
+    transition: color 0.2s;
+  }
+  .nav-links a:hover { color: var(--white); }
+  .nav-cta {
+    background: var(--cyan); color: #000;
+    border: none; padding: 8px 20px; border-radius: 8px;
+    font-size: 13px; font-weight: 600; cursor: pointer;
+    transition: opacity 0.2s, transform 0.15s;
+    text-decoration: none;
+  }
+  .nav-cta:hover { opacity: 0.9; transform: translateY(-1px); }
+  .hamburger { display: none; cursor: pointer; flex-direction: column; gap: 5px; }
+  .hamburger span { display: block; width: 22px; height: 2px; background: var(--white); border-radius: 2px; transition: all 0.3s; }
+
+  /* ─── HERO ─── */
+  #hero {
+    min-height: 100vh;
+    display: flex; flex-direction: column;
+    align-items: center; justify-content: center;
+    position: relative; overflow: hidden;
+    padding: 120px 5vw 80px;
+    text-align: center;
+  }
+  #hero-canvas {
+    position: absolute; inset: 0; z-index: 0;
+  }
+  .hero-content { position: relative; z-index: 2; max-width: 900px; }
+  .hero-badge {
+    display: inline-flex; align-items: center; gap: 8px;
+    background: rgba(0,229,255,0.08);
+    border: 1px solid rgba(0,229,255,0.2);
+    padding: 6px 16px; border-radius: 100px;
+    font-size: 12px; font-weight: 500; color: var(--cyan);
+    margin-bottom: 28px; letter-spacing: 0.05em;
+  }
+  .hero-badge .dot { width: 6px; height: 6px; background: var(--mint); border-radius: 50%; animation: pulse 2s infinite; }
+  @keyframes pulse { 0%,100%{transform:scale(1);opacity:1} 50%{transform:scale(1.3);opacity:0.7} }
+  .hero-headline {
+    font-size: clamp(36px, 6vw, 72px);
+    font-weight: 800; letter-spacing: -2px;
+    line-height: 1.05;
+    color: var(--white);
+    margin-bottom: 20px;
+  }
+  .hero-headline span {
+    background: linear-gradient(135deg, var(--cyan) 0%, var(--violet) 100%);
+    -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+  }
+  .hero-typing {
+    font-size: clamp(16px, 2vw, 22px);
+    color: var(--muted); margin-bottom: 12px; height: 30px;
+    font-weight: 400;
+  }
+  #typing-text { color: var(--cyan); font-weight: 600; }
+  .hero-sub {
+    font-size: clamp(15px, 1.5vw, 18px); color: var(--muted);
+    max-width: 640px; margin: 0 auto 40px; line-height: 1.7;
+  }
+  .hero-btns { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; margin-bottom: 60px; }
+  .btn-primary {
+    background: var(--cyan); color: #000;
+    border: none; padding: 14px 28px; border-radius: 10px;
+    font-size: 14px; font-weight: 600; cursor: pointer;
+    transition: all 0.2s; text-decoration: none; display: inline-flex; align-items: center; gap: 8px;
+  }
+  .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 8px 30px rgba(0,229,255,0.3); }
+  .btn-secondary {
+    background: transparent; color: var(--white);
+    border: 1px solid rgba(255,255,255,0.2); padding: 14px 28px; border-radius: 10px;
+    font-size: 14px; font-weight: 500; cursor: pointer;
+    transition: all 0.2s; text-decoration: none; display: inline-flex; align-items: center; gap: 8px;
+  }
+  .btn-secondary:hover { border-color: var(--cyan); color: var(--cyan); transform: translateY(-2px); }
+  .hero-metrics {
+    display: flex; gap: 40px; justify-content: center; flex-wrap: wrap;
+  }
+  .metric-item { text-align: center; }
+  .metric-num {
+    font-size: 32px; font-weight: 800; letter-spacing: -1px;
+    background: linear-gradient(135deg, var(--cyan), var(--mint));
+    -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+  }
+  .metric-label { font-size: 12px; color: var(--muted); font-weight: 500; letter-spacing: 0.04em; }
+  .scroll-hint {
+    position: absolute; bottom: 32px; left: 50%;
+    transform: translateX(-50%);
+    display: flex; flex-direction: column; align-items: center; gap: 6px;
+    color: var(--muted); font-size: 11px; letter-spacing: 0.1em;
+    animation: scrollBounce 2s ease-in-out infinite;
+  }
+  .scroll-hint::after {
+    content: '';
+    width: 1px; height: 40px;
+    background: linear-gradient(to bottom, var(--cyan), transparent);
+  }
+  @keyframes scrollBounce { 0%,100%{transform:translateX(-50%) translateY(0)} 50%{transform:translateX(-50%) translateY(6px)} }
+
+  /* ─── SECTIONS ─── */
+  section { padding: 100px 5vw; }
+  .section-label {
+    display: inline-flex; align-items: center; gap: 8px;
+    font-family: 'JetBrains Mono', monospace; font-size: 11px;
+    font-weight: 500; letter-spacing: 0.15em;
+    color: var(--cyan); margin-bottom: 16px;
+  }
+  .section-label::before { content: '//'; opacity: 0.5; }
+  .section-title {
+    font-size: clamp(28px, 4vw, 48px);
+    font-weight: 800; letter-spacing: -1px;
+    line-height: 1.1; margin-bottom: 16px;
+  }
+  .section-sub { color: var(--muted); font-size: 17px; max-width: 600px; line-height: 1.7; margin-bottom: 60px; }
+
+  /* ─── ABOUT ─── */
+  #about { background: var(--bg2); }
+  .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: center; }
+  .about-story p { color: var(--muted); line-height: 1.8; margin-bottom: 16px; font-size: 16px; }
+  .about-story strong { color: var(--white); }
+  .about-tags { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 24px; }
+  .tag {
+    padding: 6px 14px; border-radius: 6px;
+    background: rgba(123,97,255,0.1);
+    border: 1px solid rgba(123,97,255,0.2);
+    font-size: 12px; font-weight: 500; color: var(--violet);
+    transition: all 0.2s;
+  }
+  .tag:hover { background: rgba(123,97,255,0.2); transform: translateY(-1px); }
+  .about-timeline { display: flex; flex-direction: column; gap: 0; }
+  .tl-item {
+    display: flex; gap: 20px; padding-bottom: 32px; position: relative;
+  }
+  .tl-item:not(:last-child)::after {
+    content: ''; position: absolute;
+    left: 19px; top: 40px; bottom: 0; width: 1px;
+    background: linear-gradient(to bottom, var(--cyan), transparent);
+  }
+  .tl-dot {
+    width: 40px; height: 40px; border-radius: 50%; flex-shrink: 0;
+    background: rgba(0,229,255,0.1); border: 1px solid var(--border-lit);
+    display: flex; align-items: center; justify-content: center;
+    font-size: 14px;
+  }
+  .tl-year { font-size: 11px; color: var(--cyan); font-weight: 600; font-family: 'JetBrains Mono', monospace; margin-bottom: 2px; }
+  .tl-role { font-weight: 600; font-size: 14px; color: var(--white); }
+  .tl-place { font-size: 12px; color: var(--muted); }
+
+  /* ─── IMPACT DASHBOARD ─── */
+  #impact {
+    background: radial-gradient(ellipse at 50% 0%, rgba(0,229,255,0.05) 0%, transparent 70%), var(--bg);
+  }
+  .impact-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+  .impact-card {
+    background: var(--bg2);
+    border: 1px solid var(--border);
+    border-radius: 16px; padding: 32px 28px;
+    position: relative; overflow: hidden;
+    transition: all 0.3s;
+  }
+  .impact-card:hover { border-color: var(--border-lit); transform: translateY(-4px); box-shadow: var(--glow-cyan); }
+  .impact-card::before {
+    content: ''; position: absolute; inset: 0;
+    background: linear-gradient(135deg, rgba(0,229,255,0.03) 0%, transparent 60%);
+    pointer-events: none;
+  }
+  .impact-num {
+    font-size: 48px; font-weight: 800; letter-spacing: -2px;
+    background: linear-gradient(135deg, var(--cyan), var(--mint));
+    -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+    line-height: 1;
+  }
+  .impact-label { font-size: 14px; color: var(--muted); margin-top: 8px; font-weight: 500; }
+  .impact-icon { font-size: 28px; margin-bottom: 16px; opacity: 0.8; }
+
+  /* ─── EXPERIENCE TIMELINE ─── */
+  #experience { background: var(--bg2); }
+  .exp-timeline { position: relative; }
+  .exp-timeline::before {
+    content: ''; position: absolute;
+    left: 0; top: 0; bottom: 0; width: 1px;
+    background: linear-gradient(to bottom, var(--cyan), var(--violet), transparent);
+    margin-left: 16px;
+  }
+  .exp-item {
+    display: flex; gap: 32px; padding-left: 52px;
+    position: relative; margin-bottom: 48px;
+  }
+  .exp-item::before {
+    content: ''; position: absolute;
+    left: 10px; top: 8px;
+    width: 14px; height: 14px; border-radius: 50%;
+    background: var(--bg); border: 2px solid var(--cyan);
+    transition: background 0.3s;
+  }
+  .exp-item:hover::before { background: var(--cyan); }
+  .exp-date {
+    min-width: 110px; font-size: 12px; font-weight: 500;
+    color: var(--cyan); font-family: 'JetBrains Mono', monospace;
+    padding-top: 4px; flex-shrink: 0;
+  }
+  .exp-card {
+    background: var(--bg3); border: 1px solid var(--border);
+    border-radius: 16px; padding: 24px 28px; flex: 1;
+    transition: all 0.3s;
+  }
+  .exp-card:hover { border-color: var(--border-lit); transform: translateX(4px); }
+  .exp-company { font-size: 11px; color: var(--cyan); font-weight: 600; letter-spacing: 0.1em; margin-bottom: 4px; }
+  .exp-role { font-size: 18px; font-weight: 700; color: var(--white); margin-bottom: 8px; }
+  .exp-desc { font-size: 14px; color: var(--muted); line-height: 1.7; margin-bottom: 14px; }
+  .exp-tags { display: flex; flex-wrap: wrap; gap: 6px; }
+  .exp-tag {
+    padding: 3px 10px; border-radius: 4px;
+    background: rgba(0,229,255,0.06);
+    border: 1px solid rgba(0,229,255,0.12);
+    font-size: 11px; font-weight: 500; color: var(--cyan);
+  }
+
+  /* ─── SKILLS ─── */
+  #skills { background: var(--bg); }
+  .skills-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 20px; }
+  .skill-cat {
+    background: var(--bg2); border: 1px solid var(--border);
+    border-radius: 16px; padding: 24px;
+    transition: all 0.3s;
+  }
+  .skill-cat:hover { border-color: var(--border-lit); }
+  .skill-cat-title {
+    display: flex; align-items: center; gap: 10px;
+    font-size: 13px; font-weight: 600; letter-spacing: 0.05em;
+    color: var(--white); margin-bottom: 16px;
+  }
+  .skill-cat-icon { font-size: 18px; }
+  .skill-pills { display: flex; flex-wrap: wrap; gap: 6px; }
+  .skill-pill {
+    padding: 5px 12px; border-radius: 6px; font-size: 12px; font-weight: 500;
+    background: rgba(255,255,255,0.04); border: 1px solid var(--border);
+    color: var(--muted); cursor: default; transition: all 0.2s;
+  }
+  .skill-pill:hover { background: rgba(0,229,255,0.08); border-color: rgba(0,229,255,0.2); color: var(--cyan); transform: translateY(-1px); }
+
+  /* ─── PROJECTS ─── */
+  #projects {
+    background: radial-gradient(ellipse at 100% 50%, rgba(123,97,255,0.05) 0%, transparent 60%), var(--bg2);
+  }
+  .projects-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(340px, 1fr)); gap: 20px; }
+  .project-card {
+    background: var(--bg3); border: 1px solid var(--border);
+    border-radius: 20px; padding: 28px;
+    transition: all 0.35s; position: relative; overflow: hidden;
+    cursor: pointer;
+  }
+  .project-card:hover { border-color: var(--border-lit); transform: translateY(-6px); box-shadow: var(--glow-cyan); }
+  .project-card::after {
+    content: ''; position: absolute; inset: 0;
+    background: linear-gradient(135deg, rgba(0,229,255,0.04) 0%, rgba(123,97,255,0.04) 100%);
+    opacity: 0; transition: opacity 0.3s;
+  }
+  .project-card:hover::after { opacity: 1; }
+  .project-emoji { font-size: 32px; margin-bottom: 16px; }
+  .project-status {
+    display: inline-block; padding: 3px 10px; border-radius: 4px; font-size: 11px;
+    font-weight: 600; letter-spacing: 0.08em; margin-bottom: 12px;
+  }
+  .status-live { background: rgba(0,255,174,0.1); color: var(--mint); border: 1px solid rgba(0,255,174,0.2); }
+  .status-beta { background: rgba(0,229,255,0.1); color: var(--cyan); border: 1px solid rgba(0,229,255,0.2); }
+  .status-dev { background: rgba(123,97,255,0.1); color: var(--violet); border: 1px solid rgba(123,97,255,0.2); }
+  .project-name { font-size: 19px; font-weight: 700; color: var(--white); margin-bottom: 8px; }
+  .project-problem { font-size: 13px; color: var(--muted); margin-bottom: 14px; line-height: 1.6; }
+  .project-impact {
+    font-size: 13px; color: var(--mint); font-weight: 600;
+    padding: 10px 14px; background: rgba(0,255,174,0.06);
+    border-radius: 8px; margin-bottom: 14px;
+    border-left: 3px solid var(--mint);
+  }
+  .project-tech { display: flex; flex-wrap: wrap; gap: 6px; }
+  .tech-pill {
+    padding: 3px 10px; font-size: 11px; font-weight: 500; border-radius: 4px;
+    background: rgba(123,97,255,0.08); border: 1px solid rgba(123,97,255,0.15);
+    color: var(--violet);
+  }
+
+  /* ─── BUILDING NOW ─── */
+  #building { background: var(--bg); }
+  .building-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 16px; }
+  .building-card {
+    background: var(--bg2); border: 1px solid var(--border);
+    border-radius: 14px; padding: 20px 22px;
+    display: flex; align-items: center; gap: 16px;
+    transition: all 0.2s;
+  }
+  .building-card:hover { border-color: var(--border-lit); transform: translateX(4px); }
+  .building-icon { width: 44px; height: 44px; border-radius: 10px; display: flex; align-items: center; justify-content: center; font-size: 20px; flex-shrink: 0; }
+  .building-card-info { flex: 1; }
+  .building-card-name { font-size: 14px; font-weight: 600; color: var(--white); margin-bottom: 3px; }
+  .building-card-desc { font-size: 12px; color: var(--muted); }
+  .building-badge {
+    padding: 3px 9px; border-radius: 4px; font-size: 10px; font-weight: 600; letter-spacing: 0.08em;
+    flex-shrink: 0;
+  }
+
+  /* ─── TECH RADAR ─── */
+  #radar { background: var(--bg2); }
+  .radar-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(160px, 1fr)); gap: 12px; }
+  .radar-item {
+    padding: 16px; border-radius: 12px; text-align: center;
+    background: var(--bg3); border: 1px solid var(--border);
+    transition: all 0.2s;
+  }
+  .radar-item:hover { border-color: rgba(0,255,174,0.2); transform: translateY(-2px); }
+  .radar-icon { font-size: 22px; margin-bottom: 8px; }
+  .radar-name { font-size: 12px; font-weight: 600; color: var(--white); margin-bottom: 3px; }
+  .radar-ring { font-size: 10px; color: var(--mint); font-weight: 500; }
+
+  /* ─── CERTIFICATIONS ─── */
+  #certs { background: var(--bg); }
+  .cert-card {
+    max-width: 500px;
+    background: linear-gradient(135deg, rgba(123,97,255,0.1), rgba(0,229,255,0.06));
+    border: 1px solid rgba(123,97,255,0.25);
+    border-radius: 20px; padding: 36px;
+    display: flex; gap: 28px; align-items: center;
+    transition: all 0.3s;
+  }
+  .cert-card:hover { transform: translateY(-4px); box-shadow: var(--glow-violet); }
+  .cert-badge { font-size: 48px; }
+  .cert-name { font-size: 22px; font-weight: 800; color: var(--white); margin-bottom: 4px; }
+  .cert-org { font-size: 13px; color: var(--violet); font-weight: 600; margin-bottom: 8px; }
+  .cert-valid { font-size: 12px; color: var(--muted); }
+  .cert-valid span { color: var(--mint); font-weight: 600; }
+
+  /* ─── CONTACT ─── */
+  #contact {
+    background: radial-gradient(ellipse at 50% 100%, rgba(123,97,255,0.08) 0%, transparent 60%), var(--bg2);
+    text-align: center;
+  }
+  .contact-grid { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; margin-bottom: 48px; }
+  .contact-card {
+    background: var(--bg3); border: 1px solid var(--border);
+    border-radius: 14px; padding: 24px 28px;
+    display: flex; flex-direction: column; align-items: center; gap: 10px;
+    min-width: 200px; transition: all 0.3s; text-decoration: none;
+  }
+  .contact-card:hover { border-color: var(--border-lit); transform: translateY(-4px); box-shadow: var(--glow-cyan); }
+  .contact-icon { font-size: 28px; }
+  .contact-label { font-size: 11px; color: var(--muted); font-weight: 500; letter-spacing: 0.08em; }
+  .contact-val { font-size: 14px; font-weight: 600; color: var(--white); }
+  .contact-btns { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
+
+  /* ─── FOOTER ─── */
+  footer {
+    padding: 32px 5vw;
+    border-top: 1px solid var(--border);
+    display: flex; justify-content: space-between; align-items: center;
+    font-size: 13px; color: var(--muted);
+    flex-wrap: wrap; gap: 12px;
+  }
+  footer a { color: var(--cyan); text-decoration: none; }
+  footer .footer-logo {
+    font-weight: 700; font-size: 15px;
+    background: linear-gradient(90deg, var(--cyan), var(--violet));
+    -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+  }
+
+  /* ─── EASTER EGG TERMINAL ─── */
+  #terminal-overlay {
+    display: none; position: fixed; inset: 0; z-index: 9000;
+    background: rgba(4,7,13,0.95); backdrop-filter: blur(12px);
+    align-items: center; justify-content: center;
+  }
+  #terminal-overlay.active { display: flex; }
+  .terminal-window {
+    background: #0A0F1A;
+    border: 1px solid rgba(0,229,255,0.3);
+    border-radius: 16px; padding: 0; overflow: hidden;
+    width: min(600px, 90vw);
+    box-shadow: 0 0 80px rgba(0,229,255,0.15);
+    animation: terminalIn 0.4s cubic-bezier(0.34,1.56,0.64,1) forwards;
+  }
+  @keyframes terminalIn { from { transform: scale(0.9) translateY(20px); opacity: 0; } to { transform: scale(1) translateY(0); opacity: 1; } }
+  .terminal-bar {
+    background: #111827; padding: 12px 16px;
+    display: flex; align-items: center; gap: 8px;
+    border-bottom: 1px solid rgba(255,255,255,0.06);
+  }
+  .t-btn { width: 12px; height: 12px; border-radius: 50%; }
+  .t-btn.close { background: #FF5F57; cursor: pointer; }
+  .t-btn.min { background: #FEBC2E; }
+  .t-btn.max { background: #28C840; }
+  .terminal-title { margin-left: 8px; font-size: 12px; color: var(--muted); font-family: 'JetBrains Mono', monospace; }
+  .terminal-body {
+    padding: 24px; font-family: 'JetBrains Mono', monospace;
+    font-size: 13px; line-height: 1.9; min-height: 300px;
+  }
+  .t-line { display: flex; gap: 8px; }
+  .t-prompt { color: var(--mint); flex-shrink: 0; }
+  .t-text { color: var(--white); }
+  .t-blue { color: var(--cyan); }
+  .t-violet { color: #A78BFA; }
+  .t-muted { color: var(--muted); }
+  .t-cursor-line { display: flex; align-items: center; gap: 2px; margin-top: 4px; }
+  .t-cursor { display: inline-block; width: 8px; height: 16px; background: var(--cyan); animation: blink 1s step-end infinite; }
+
+  /* ─── MOBILE ─── */
+  @media (max-width: 768px) {
+    .nav-links { display: none; }
+    .hamburger { display: flex; }
+    .about-grid { grid-template-columns: 1fr; gap: 40px; }
+    .impact-grid { grid-template-columns: 1fr 1fr; }
+    .hero-metrics { gap: 20px; }
+    .metric-num { font-size: 24px; }
+    .cert-card { flex-direction: column; text-align: center; }
+  }
+  @media (max-width: 500px) {
+    .impact-grid { grid-template-columns: 1fr; }
+    .hero-btns { flex-direction: column; align-items: center; }
+    .contact-btns { flex-direction: column; align-items: center; }
+  }
+
+  /* ─── SCROLL REVEAL ─── */
+  .reveal {
+    opacity: 0; transform: translateY(30px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+  }
+  .reveal.visible { opacity: 1; transform: translateY(0); }
+  .reveal-delay-1 { transition-delay: 0.1s; }
+  .reveal-delay-2 { transition-delay: 0.2s; }
+  .reveal-delay-3 { transition-delay: 0.3s; }
+</style>
+</head>
+<body>
+
+<!-- PRELOADER -->
+<div id="preloader">
+  <div class="logo-pre">MT</div>
+  <div class="boot-line" style="animation-delay:0.1s; color: var(--muted)">INITIALIZING SYSTEM<span class="cursor">_</span></div>
+  <div class="boot-line" style="animation-delay:0.5s">▸ Loading CRM architecture modules...</div>
+  <div class="boot-line" style="animation-delay:0.9s">▸ Loading AI automation engine...</div>
+  <div class="boot-line" style="animation-delay:1.3s">▸ Loading enterprise integration layer...</div>
+  <div class="boot-line" style="animation-delay:1.7s; color: var(--mint)">✓ SYSTEM ONLINE — Welcome.</div>
+</div>
+
+<!-- NAV -->
+<nav>
+  <a href="#" class="nav-logo">Mustafa Tarig</a>
+  <ul class="nav-links">
+    <li><a href="#about">About</a></li>
+    <li><a href="#experience">Experience</a></li>
+    <li><a href="#projects">Projects</a></li>
+    <li><a href="#skills">Skills</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+  <a href="https://wa.me/971522745591?text=Hi%20Mustafa%2C%20I%20visited%20your%20portfolio%20and%20would%20like%20to%20connect." class="nav-cta">Let's Talk</a>
+  <div class="hamburger" id="hamburger"><span></span><span></span><span></span></div>
+</nav>
+
+<!-- HERO -->
+<section id="hero">
+  <canvas id="hero-canvas"></canvas>
+  <div class="hero-content">
+    <div class="hero-badge">
+      <div class="dot"></div>
+      Available for strategic engagements — Dubai, UAE
+    </div>
+    <h1 class="hero-headline">
+      Transforming Business Complexity<br><span>Into Digital Intelligence</span>
+    </h1>
+    <div class="hero-typing">
+      I am a <span id="typing-text">CRM Architect</span>
+    </div>
+    <p class="hero-sub">
+      I bridge strategy and execution — designing CRM ecosystems, building AI-powered automations, and architecting enterprise platforms that create measurable, lasting impact.
+    </p>
+    <div class="hero-btns">
+      <a href="#projects" class="btn-primary">View Projects →</a>
+      <a href="https://wa.me/971522745591?text=Hi%20Mustafa%2C%20I%20visited%20your%20portfolio%20and%20would%20like%20to%20connect." target="_blank" class="btn-secondary">
+        WhatsApp Me
+      </a>
+      <a href="mailto:jahjoummustafa@gmail.com" class="btn-secondary">Book a Meeting</a>
+      <a href="https://drive.google.com/uc?export=download&id=1IiGUnlDFYPeMiW-qlB2ID0pLlvWaze_l" 
+          target="_blank" 
+          class="btn-secondary">
+          Download CV
+      </a>
+    </div>
+    <div class="hero-metrics">
+      <div class="metric-item">
+        <div class="metric-num" data-count="9">0</div>
+        <div class="metric-label">Years Experience</div>
+      </div>
+      <div class="metric-item">
+        <div class="metric-num" data-count="8">0</div>
+        <div class="metric-label">CRM Implementations</div>
+      </div>
+      <div class="metric-item">
+        <div class="metric-num" data-count="5">0</div>
+        <div class="metric-label">AI Projects Live</div>
+      </div>
+      <div class="metric-item">
+        <div class="metric-num" data-count="4" data-suffix="+">0</div>
+        <div class="metric-label">Enterprise Projects</div>
+      </div>
+
+      <div class="metric-item">
+        <div class="metric-num" data-count="30" data-suffix="+">0</div>
+        <div class="metric-label">Automations Built</div>
+      </div>
+    </div>
+  </div>
+  <div class="scroll-hint">SCROLL</div>
+</section>
+
+<!-- ABOUT -->
+<section id="about">
+  <div class="section-label">ABOUT ME</div>
+  <div class="about-grid">
+    <div class="about-story reveal">
+      <h2 class="section-title">The Builder<br>Behind the Systems</h2>
+      <p>I started as a <strong>developer</strong> who loved solving real problems. Over 9+ years, that curiosity evolved into something bigger — the ability to see an entire business, understand where it breaks, and architect the systems that fix it at scale.</p>
+      <p>Today I operate at the intersection of <strong>technology strategy and hands-on execution</strong>. I don't just implement CRMs — I design digital transformation programs. I don't just write automations — I build AI platforms that change how teams operate.</p>
+      <p>From <strong>university recruitment systems</strong> in Dubai to <strong>Salesforce architectures</strong> for real estate giants to <strong>AI voice agents</strong> that qualify leads 24/7 — my work creates measurable business impact.</p>
+      <div class="about-tags">
+        <span class="tag">Digital Transformation</span>
+        <span class="tag">CRM Architecture</span>
+        <span class="tag">AI Automation</span>
+        <span class="tag">Solution Architecture</span>
+        <span class="tag">Project Management</span>
+        <span class="tag">Product Thinking</span>
+        <span class="tag">Startup Founding</span>
+        <span class="tag">Business Analysis</span>
+        <span class="tag">Enterprise Systems</span>
+      </div>
+    </div>
+    <div class="about-timeline reveal reveal-delay-2">
+      <div class="tl-item">
+        <div class="tl-dot">🚀</div>
+        <div>
+          <div class="tl-year">2016</div>
+          <div class="tl-role">Co-Founder</div>
+          <div class="tl-place">Salaty Startup · Built from 0</div>
+        </div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-dot">🎓</div>
+        <div>
+          <div class="tl-year">2018</div>
+          <div class="tl-role">Started as Full Stack Developer</div>
+          <div class="tl-place">EnayaTech · First CRM implementations</div>
+        </div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-dot">🏢</div>
+        <div>
+          <div class="tl-year">2021</div>
+          <div class="tl-role">Software Engineer</div>
+          <div class="tl-place">Deja Vu Real Estate · CRM transformation</div>
+        </div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-dot">⚡</div>
+        <div>
+          <div class="tl-year">2023–Now</div>
+          <div class="tl-role">Digital Transformation Manager</div>
+          <div class="tl-place">Allegiance Real Estate · AI & Salesforce Lead </div>
+        </div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-dot">⚡</div>
+        <div>
+          <div class="tl-year">2024–Now</div>
+          <div class="tl-role">Project Manager | Business Analyst | CRM Developer</div>
+          <div class="tl-place">University of Wollongong in Dubai</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- IMPACT DASHBOARD -->
+<section id="impact">
+  <div class="section-label">IMPACT</div>
+  <h2 class="section-title reveal">Results That Speak</h2>
+  <p class="section-sub reveal">Not just implementations — measurable outcomes that change how organizations operate.</p>
+  <div class="impact-grid">
+    <div class="impact-card reveal">
+      <div class="impact-icon">⚙️</div>
+      <div class="impact-num" data-count="30" data-suffix="+">0</div>
+      <div class="impact-label">Business processes digitized across multiple organizations</div>
+    </div>
+    <div class="impact-card reveal reveal-delay-1">
+      <div class="impact-icon">⚡</div>
+      <div class="impact-num" data-count="8">0</div>
+      <div class="impact-label">Enterprise CRM platforms architected & deployed</div>
+    </div>
+    <div class="impact-card reveal reveal-delay-2">
+      <div class="impact-icon">🤖</div>
+      <div class="impact-num" data-count="30">0</div>
+      <div class="impact-label">AI automation solutions delivered to production</div>
+    </div>
+    <div class="impact-card reveal">
+      <div class="impact-icon">🔗</div>
+      <div class="impact-num" data-count="20" data-suffix="+">0</div>
+      <div class="impact-label">Cross-system integrations completed</div>
+    </div>
+    <div class="impact-card reveal reveal-delay-2">
+      <div class="impact-icon">📱</div>
+      <div class="impact-num" data-count="5" data-suffix="/7">0</div>
+      <div class="impact-label">AI voice qualification operating around the clock</div>
+    </div>
+  </div>
+</section>
+
+<!-- EXPERIENCE -->
+<section id="experience">
+  <div class="section-label">EXPERIENCE</div>
+  <h2 class="section-title reveal">Career Timeline</h2>
+  <p class="section-sub reveal">9+ years of progressive technology leadership across education, real estate, and startups.</p>
+  <div class="exp-timeline">
+
+    <div class="exp-item reveal">
+      <div class="exp-date">2024 → Present</div>
+      <div class="exp-card">
+        <div class="exp-company">UNIVERSITY OF WOLLONGONG DUBAI</div>
+        <div class="exp-role">Project Manager · CRM Developer · Administrator</div>
+        <div class="exp-desc">Owned the full student recruitment technology lifecycle. Optimized SugarCRM for the admissions department, automated recruitment workflows end-to-end, managed SMP integrations, and established data governance frameworks for institutional data quality.</div>
+        <div class="exp-tags">
+          <span class="exp-tag">SugarCRM</span><span class="exp-tag">Project Management</span>
+          <span class="exp-tag">Recruitment Automation</span><span class="exp-tag">Data Governance</span>
+          <span class="exp-tag">SMP Integration</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="exp-item reveal">
+      <div class="exp-date">2023 → 2025</div>
+      <div class="exp-card">
+        <div class="exp-company">ALLEGIANCE REAL ESTATE · DUBAI</div>
+        <div class="exp-role">Digital Transformation Manager & Salesforce Developer</div>
+        <div class="exp-desc">Led end-to-end digital transformation of one of Dubai's leading real estate firms. Architected and deployed Salesforce with custom applications, automated lead distribution engine, and deep integrations with property portals and marketing platforms.</div>
+        <div class="exp-tags">
+          <span class="exp-tag">Salesforce</span><span class="exp-tag">Apex</span><span class="exp-tag">LWC</span>
+          <span class="exp-tag">Lead Automation</span><span class="exp-tag">Portal Integration</span>
+          <span class="exp-tag">Marketing Automation</span>
+        </div>
+      </div>
+    </div>
+
+
+
+    <div class="exp-item reveal">
+      <div class="exp-date">2021 → 2023</div>
+      <div class="exp-card">
+        <div class="exp-company">DEJA VU REAL ESTATE · DUBAI</div>
+        <div class="exp-role">Software Engineer</div>
+        <div class="exp-desc">Full CRM transformation program. Rebuilt the company's digital infrastructure: CRM migration, SEO architecture, PPC automation systems, and performance optimization. Increased organic lead capture through systematic SEO implementation.</div>
+        <div class="exp-tags">
+          <span class="exp-tag">CRM Migration</span><span class="exp-tag">SEO</span>
+          <span class="exp-tag">PPC Automation</span><span class="exp-tag">Full Stack</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="exp-item reveal">
+      <div class="exp-date">2020</div>
+      <div class="exp-card">
+        <div class="exp-company">SUNRISE INTERNATIONAL SCHOOLS</div>
+        <div class="exp-role">Technology Transformation Lead</div>
+        <div class="exp-desc">Spearheaded cloud migration planning and digitalization initiatives for the school network. Designed the AWS migration roadmap and led internal technology transformation programs to modernize the institution's infrastructure.</div>
+        <div class="exp-tags">
+          <span class="exp-tag">AWS Migration</span><span class="exp-tag">Cloud Strategy</span>
+          <span class="exp-tag">Digital Transformation</span><span class="exp-tag">Education Tech</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="exp-item reveal">
+      <div class="exp-date">2017 → 2020</div>
+      <div class="exp-card">
+        <div class="exp-company">ENAYATECH</div>
+        <div class="exp-role">Full Stack Developer</div>
+        <div class="exp-desc">First professional role: delivered CRM implementations for enterprise clients, managed Linux server administration, and built custom enterprise solutions. Foundation of systems thinking and full-stack execution that defines my career today.</div>
+        <div class="exp-tags">
+          <span class="exp-tag">Full Stack</span><span class="exp-tag">CRM Implementation</span>
+          <span class="exp-tag">Linux</span><span class="exp-tag">PHP</span><span class="exp-tag">MySQL</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="exp-item reveal">
+      <div class="exp-date">2016 → 2020</div>
+      <div class="exp-card">
+        <div class="exp-company">SALATY · STARTUP · DUBAI</div>
+        <div class="exp-role">Co-Founder & CTO</div>
+        <div class="exp-desc">Built a entertainment/fintech startup from the ground up. Responsible for product architecture, technology stack decisions, platform development, and operational setup. Gained hands-on experience with the full founder journey from ideation to MVP.</div>
+        <div class="exp-tags">
+          <span class="exp-tag">Startup Founding</span><span class="exp-tag">Product Architecture</span>
+          <span class="exp-tag">Full Stack</span><span class="exp-tag">CTO</span>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- SKILLS -->
+<section id="skills">
+  <div class="section-label">TECHNICAL EXPERTISE</div>
+  <h2 class="section-title reveal">Technology Ecosystem</h2>
+  <p class="section-sub reveal">Deep expertise across CRM, AI, cloud, and full-stack development.</p>
+  <div class="skills-grid">
+    <div class="skill-cat reveal">
+      <div class="skill-cat-title"><span class="skill-cat-icon">🏗️</span> CRM Platforms</div>
+      <div class="skill-pills">
+        <span class="skill-pill">Salesforce</span>
+        <span class="skill-pill">SugarCRM</span>
+        <span class="skill-pill">Microsoft Dynamics</span>
+        <span class="skill-pill">HubSpot</span>
+        <span class="skill-pill">Zoho CRM</span>
+        <span class="skill-pill">Bitrix24</span>
+        <span class="skill-pill">Custom built CRM</span>
+      </div>
+    </div>
+    <div class="skill-cat reveal reveal-delay-1">
+      <div class="skill-cat-title"><span class="skill-cat-icon">💻</span> Development</div>
+      <div class="skill-pills">
+        <span class="skill-pill">React</span>
+        <span class="skill-pill">Node.js</span>
+        <span class="skill-pill">JavaScript</span>
+        <span class="skill-pill">Python</span>
+        <span class="skill-pill">Django/Flask/Tornado</span>
+        <span class="skill-pill">PHP</span>
+        <span class="skill-pill">Laravel</span>
+        <span class="skill-pill">TypeScript</span>
+        <span class="skill-pill">REST APIs</span>
+      </div>
+    </div>
+    <div class="skill-cat reveal reveal-delay-2">
+      <div class="skill-cat-title"><span class="skill-cat-icon">🤖</span> AI & Automation</div>
+      <div class="skill-pills">
+        <span class="skill-pill">UiPath</span>
+        <span class="skill-pill">N8N</span>
+        <span class="skill-pill">RAG Systems</span>
+        <span class="skill-pill">Zapier</span>
+        <span class="skill-pill">Make</span>
+        <span class="skill-pill">OpenAI GPT</span>
+        <span class="skill-pill">Whisper</span>
+        <span class="skill-pill">ElevenLabs</span>
+        <span class="skill-pill">AI Voice Agents</span>
+        <span class="skill-pill">LangChain</span>
+      </div>
+    </div>
+    <div class="skill-cat reveal">
+      <div class="skill-cat-title"><span class="skill-cat-icon">☁️</span> Cloud & DevOps</div>
+      <div class="skill-pills">
+        <span class="skill-pill">AWS</span>
+        <span class="skill-pill">Azure</span>
+        <span class="skill-pill">Docker</span>
+        <span class="skill-pill">Linux</span>
+        <span class="skill-pill">Nginx</span>
+        <span class="skill-pill">CI/CD</span>
+      </div>
+    </div>
+    <div class="skill-cat reveal reveal-delay-1">
+      <div class="skill-cat-title"><span class="skill-cat-icon">🗄️</span> Data & Databases</div>
+      <div class="skill-pills">
+        <span class="skill-pill">PostgreSQL</span>
+        <span class="skill-pill">MySQL</span>
+        <span class="skill-pill">MongoDB</span>
+        <span class="skill-pill">SQL Server</span>
+        <span class="skill-pill">Data Governance</span>
+      </div>
+    </div>
+    <div class="skill-cat reveal reveal-delay-2">
+      <div class="skill-cat-title"><span class="skill-cat-icon">📐</span> Strategy & Method</div>
+      <div class="skill-pills">
+        <span class="skill-pill">Business Analysis</span>
+        <span class="skill-pill">Solution Architecture</span>
+        <span class="skill-pill">Project Management</span>
+        <span class="skill-pill">Digital Transformation</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROJECTS -->
+<section id="projects">
+  <div class="section-label">FEATURED WORK</div>
+  <h2 class="section-title reveal">Projects That Delivered</h2>
+  <p class="section-sub reveal">From enterprise CRM architectures to AI automation platforms — work that solves real business problems.</p>
+  <div class="projects-grid">
+
+    <div class="project-card reveal">
+      <div class="project-emoji">🎙️</div>
+      <div class="project-status status-live">LIVE</div>
+      <div class="project-name">AI Voice Qualification Platform</div>
+      <div class="project-problem">Manual lead qualification created bottlenecks, inconsistent scoring, and significant agent time drain.</div>
+      <div class="project-impact">→ 24/7 automated qualification with instant AI voice interaction</div>
+      <div class="project-tech">
+        <span class="tech-pill">OpenAI</span><span class="tech-pill">Twilio</span>
+        <span class="tech-pill">Whisper</span><span class="tech-pill">Node.js</span><span class="tech-pill">CRM API</span>
+      </div>
+    </div>
+
+    <div class="project-card reveal reveal-delay-1">
+      <div class="project-emoji">💬</div>
+      <div class="project-status status-live">LIVE</div>
+      <div class="project-name">WhatsApp AI Real Estate Assistant</div>
+      <div class="project-problem">Agents couldn't respond to client inquiries fast enough — losing high-intent buyers to competitors.</div>
+      <div class="project-impact">→ Instant intelligent responses across all WhatsApp client conversations</div>
+      <div class="project-tech">
+        <span class="tech-pill">WhatsApp API</span><span class="tech-pill">GPT-4</span>
+        <span class="tech-pill">RAG</span><span class="tech-pill">Python</span><span class="tech-pill">Webhook</span>
+      </div>
+    </div>
+
+    <div class="project-card reveal reveal-delay-2">
+      <div class="project-emoji">🎓</div>
+      <div class="project-status status-live">LIVE</div>
+      <div class="project-name">University Recruitment CRM & Students Portals</div>
+      <div class="project-problem">Student recruitment operated in silos — disconnected teams, lost leads, manual follow-ups, zero lifecycle visibility.</div>
+      <div class="project-impact">→ Full recruitment lifecycle automated end-to-end at UOWD</div>
+      <div class="project-tech">
+        <span class="tech-pill">SugarCRM</span><span class="tech-pill">SMP</span>
+        <span class="tech-pill">Workflow Engine</span><span class="tech-pill">Data Governance</span>
+      </div>
+    </div>
+
+    <div class="project-card reveal">
+      <div class="project-emoji">⚡</div>
+      <div class="project-status status-live">LIVE</div>
+      <div class="project-name">Salesforce Lead Distribution Engine</div>
+      <div class="project-problem">Leads were manually assigned — taking hours, creating agent favoritism, and causing high lead drop-off.</div>
+      <div class="project-impact">→ Assignment time reduced from hours to seconds with round-robin automation</div>
+      <div class="project-tech">
+        <span class="tech-pill">Salesforce</span><span class="tech-pill">Apex</span>
+        <span class="tech-pill">Flow Builder</span><span class="tech-pill">Custom Objects</span>
+      </div>
+    </div>
+
+    <div class="project-card reveal reveal-delay-1">
+      <div class="project-emoji">🏘️</div>
+      <div class="project-status status-beta">BETA</div>
+      <div class="project-name">Developer-Broker SaaS Platform</div>
+      <div class="project-problem">No centralized system for property developers to manage broker relationships, inventory, and commissions.</div>
+      <div class="project-impact">→ Enterprise SaaS delivering full inventory governance and broker intelligence</div>
+      <div class="project-tech">
+        <span class="tech-pill">React</span><span class="tech-pill">Node.js</span>
+        <span class="tech-pill">PostgreSQL</span><span class="tech-pill">AWS</span><span class="tech-pill">Stripe</span>
+      </div>
+    </div>
+
+    <div class="project-card reveal reveal-delay-2">
+      <div class="project-emoji">🔄</div>
+      <div class="project-status status-live">LIVE</div>
+      <div class="project-name">Real Estate CRM Transformation</div>
+      <div class="project-problem">Legacy CRM with poor adoption, no analytics, and disconnected from portals like Property Finder and Bayut.</div>
+      <div class="project-impact">→ Fully integrated CRM with live portal sync and performance dashboards</div>
+      <div class="project-tech">
+        <span class="tech-pill">Salesforce</span><span class="tech-pill">API Integration</span>
+        <span class="tech-pill">Property Finder</span><span class="tech-pill">Bayut</span><span class="tech-pill">Automation</span>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- BUILDING NOW -->
+<section id="building">
+  <div class="section-label">CURRENTLY BUILDING</div>
+  <h2 class="section-title reveal">Always Shipping</h2>
+  <p class="section-sub reveal">Active projects in development, beta, and research stages.</p>
+  <div class="building-grid">
+    <div class="building-card reveal">
+      <div class="building-icon" style="background:rgba(0,229,255,0.1)">🏗️</div>
+      <div class="building-card-info">
+        <div class="building-card-name">DevBroker Platform</div>
+        <div class="building-card-desc">B2B SaaS for developer-broker management</div>
+      </div>
+      <div class="building-badge status-beta">BETA</div>
+    </div>
+    <div class="building-card reveal reveal-delay-1">
+      <div class="building-icon" style="background:rgba(0,255,174,0.1)">🎙️📄</div>
+      <div class="building-card-info">
+        <div class="building-card-name">AI Voice Recruitment Agent & AI Document Qualification Agent</div>
+        <div class="building-card-desc">Automated screening for universities</div>
+      </div>
+      <div class="building-badge status-dev">IN DEV</div>
+    </div>
+    <div class="building-card reveal reveal-delay-2">
+      <div class="building-icon" style="background:rgba(123,97,255,0.1)">💬</div>
+      <div class="building-card-info">
+        <div class="building-card-name">WhatsApp AI Real Estate Bot</div>
+        <div class="building-card-desc">GPT-powered property assistant</div>
+      </div>
+      <div class="building-badge status-live">LIVE</div>
+    </div>
+    <div class="building-card reveal">
+      <div class="building-icon" style="background:rgba(0,229,255,0.1)">🧠</div>
+      <div class="building-card-info">
+        <div class="building-card-name">Developer Intelligence Platform</div>
+        <div class="building-card-desc">Analytics layer for real estate inventory</div>
+      </div>
+      <div class="building-badge status-dev">IN DEV</div>
+    </div>
+    <div class="building-card reveal reveal-delay-1">
+      <div class="building-icon" style="background:rgba(0,255,174,0.1)">⚡</div>
+      <div class="building-card-info">
+        <div class="building-card-name">Enterprise CRM Automations</div>
+        <div class="building-card-desc">No-code workflow automation suite</div>
+      </div>
+      <div class="building-badge status-beta">BETA</div>
+    </div>
+    <div class="building-card reveal reveal-delay-2">
+      <div class="building-icon" style="background:rgba(123,97,255,0.1)">🔬</div>
+      <div class="building-card-info">
+        <div class="building-card-name">Agentic AI Research</div>
+        <div class="building-card-desc">MCP servers & multi-agent orchestration</div>
+      </div>
+      <div class="building-badge" style="background:rgba(255,255,255,0.06);color:var(--muted);border:1px solid rgba(255,255,255,0.1)">RESEARCH</div>
+    </div>
+  </div>
+</section>
+
+<!-- TECH RADAR -->
+<section id="radar">
+  <div class="section-label">EXPLORING</div>
+  <h2 class="section-title reveal">Technology Radar</h2>
+  <p class="section-sub reveal">Technologies actively exploring, learning, and integrating into my practice.</p>
+  <div class="radar-grid">
+    <div class="radar-item reveal"><div class="radar-icon">🤖</div><div class="radar-name">Claude Code</div><div class="radar-ring">ADOPTED</div></div>
+    <div class="radar-item reveal"><div class="radar-icon">🖱️</div><div class="radar-name">Cursor AI</div><div class="radar-ring">ADOPTED</div></div>
+    <div class="radar-item reveal"><div class="radar-icon">🌊</div><div class="radar-name">Windsurf</div><div class="radar-ring">EXPLORING</div></div>
+    <div class="radar-item reveal"><div class="radar-icon">⚡</div><div class="radar-name">Agentic AI</div><div class="radar-ring">ADOPTING</div></div>
+    <div class="radar-item reveal"><div class="radar-icon">🔌</div><div class="radar-name">MCP Servers</div><div class="radar-ring">ADOPTED</div></div>
+    <div class="radar-item reveal"><div class="radar-icon">🎙️</div><div class="radar-name">OpenAI Realtime</div><div class="radar-ring">BUILDING</div></div>
+    <div class="radar-item reveal"><div class="radar-icon">📚</div><div class="radar-name">RAG Systems</div><div class="radar-ring">ADOPTED</div></div>
+    <div class="radar-item reveal"><div class="radar-icon">🔊</div><div class="radar-name">AI Voice (ElevenLabs)</div><div class="radar-ring">ADOPTED</div></div>
+    <div class="radar-item reveal"><div class="radar-icon">🕸️</div><div class="radar-name">LangGraph</div><div class="radar-ring">EXPLORING</div></div>
+  </div>
+</section>
+
+<!-- CERTIFICATIONS -->
+<section id="certs">
+  <div class="section-label">CREDENTIALS</div>
+  <h2 class="section-title reveal">Certification</h2>
+  <div class="cert-card reveal">
+    <div class="cert-badge">📜</div>
+    <div>
+      <div class="cert-name">CAPM®</div>
+      <div class="cert-org">Project Management Institute (PMI)</div>
+      <div class="cert-valid">Valid until <span>October 2028</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="section-label">GET IN TOUCH</div>
+  <h2 class="section-title reveal">Let's Build Something</h2>
+  <p class="section-sub reveal" style="margin: 0 auto 48px">Whether you need a CRM architecture, AI automation, or a full digital transformation — I'd love to explore what we can build together.</p>
+  <div class="contact-grid">
+    <a href="mailto:jahjoummustafa@gmail.com" class="contact-card">
+      <div class="contact-icon">✉️</div>
+      <div class="contact-label">EMAIL</div>
+      <div class="contact-val">jahjoummustafa@gmail.com</div>
+    </a>
+    <a href="tel:+971522745591" class="contact-card">
+      <div class="contact-icon">📞</div>
+      <div class="contact-label">PHONE</div>
+      <div class="contact-val">+971 52 274 5591</div>
+    </a>
+    <a href="https://wa.me/971522745591?text=Hi%20Mustafa%2C%20I%20visited%20your%20portfolio%20and%20would%20like%20to%20connect." target="_blank" class="contact-card">
+      <div class="contact-icon">💬</div>
+      <div class="contact-label">WHATSAPP</div>
+      <div class="contact-val">+971 52 274 5591</div>
+    </a>
+    <div class="contact-card">
+      <div class="contact-icon">📍</div>
+      <div class="contact-label">LOCATION</div>
+      <div class="contact-val">Dubai, UAE</div>
+    </div>
+  </div>
+  <div class="contact-btns">
+    <a href="mailto:jahjoummustafa@gmail.com?subject=Meeting Request" class="btn-secondary">Schedule Meeting</a>
+    <a href="https://drive.google.com/uc?export=download&id=1IiGUnlDFYPeMiW-qlB2ID0pLlvWaze_l" target="_blank" class="btn-secondary">Download CV</a>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-logo">Mustafa Tarig</div>
+  <div>Dubai, UAE · Digital Transformation Manager · Project Manager · CRM Architect · AI Builder</div>
+  <div>Type <code style="color:var(--cyan); background:rgba(0,229,255,0.1); padding:2px 6px; border-radius:4px">mustafa</code> for a surprise</div>
+</footer>
+
+<!-- TERMINAL EASTER EGG -->
+<div id="terminal-overlay">
+  <div class="terminal-window">
+    <div class="terminal-bar">
+      <div class="t-btn close" onclick="closeTerminal()"></div>
+      <div class="t-btn min"></div>
+      <div class="t-btn max"></div>
+      <div class="terminal-title">mustafa@system ~ zsh</div>
+    </div>
+    <div class="terminal-body" id="terminal-body"></div>
+  </div>
+</div>
+
+<script>
+// ─── PRELOADER ───
+window.addEventListener('load', () => {
+  setTimeout(() => {
+    const p = document.getElementById('preloader');
+    p.classList.add('fade-out');
+    setTimeout(() => p.remove(), 700);
+  }, 2400);
+});
+
+// ─── HERO CANVAS ───
+(function() {
+  const canvas = document.getElementById('hero-canvas');
+  const ctx = canvas.getContext('2d');
+  let W, H, nodes = [], mouse = {x: -1000, y: -1000};
+  
+  function resize() {
+    W = canvas.width = canvas.offsetWidth;
+    H = canvas.height = canvas.offsetHeight;
+  }
+  
+  function createNodes(n) {
+    nodes = [];
+    for (let i = 0; i < n; i++) {
+      nodes.push({
+        x: Math.random() * W, y: Math.random() * H,
+        vx: (Math.random() - 0.5) * 0.4,
+        vy: (Math.random() - 0.5) * 0.4,
+        r: Math.random() * 2 + 1,
+        opacity: Math.random() * 0.5 + 0.2,
+        color: Math.random() > 0.6 ? '#00E5FF' : Math.random() > 0.5 ? '#7B61FF' : '#00FFAE'
+      });
+    }
+  }
+  
+  function draw() {
+    ctx.clearRect(0, 0, W, H);
+    // connections
+    for (let i = 0; i < nodes.length; i++) {
+      for (let j = i + 1; j < nodes.length; j++) {
+        const dx = nodes[i].x - nodes[j].x;
+        const dy = nodes[i].y - nodes[j].y;
+        const dist = Math.sqrt(dx*dx + dy*dy);
+        if (dist < 140) {
+          const alpha = (1 - dist/140) * 0.12;
+          ctx.beginPath();
+          ctx.moveTo(nodes[i].x, nodes[i].y);
+          ctx.lineTo(nodes[j].x, nodes[j].y);
+          ctx.strokeStyle = `rgba(0,229,255,${alpha})`;
+          ctx.lineWidth = 0.5;
+          ctx.stroke();
+        }
+      }
+      // mouse connections
+      const mx = nodes[i].x - mouse.x, my = nodes[i].y - mouse.y;
+      const md = Math.sqrt(mx*mx + my*my);
+      if (md < 180) {
+        const alpha = (1 - md/180) * 0.3;
+        ctx.beginPath();
+        ctx.moveTo(nodes[i].x, nodes[i].y);
+        ctx.lineTo(mouse.x, mouse.y);
+        ctx.strokeStyle = `rgba(0,229,255,${alpha})`;
+        ctx.lineWidth = 0.8;
+        ctx.stroke();
+      }
+    }
+    // nodes
+    nodes.forEach(n => {
+      ctx.beginPath();
+      ctx.arc(n.x, n.y, n.r, 0, Math.PI * 2);
+      ctx.fillStyle = n.color;
+      ctx.globalAlpha = n.opacity;
+      ctx.fill();
+      ctx.globalAlpha = 1;
+      n.x += n.vx; n.y += n.vy;
+      if (n.x < 0 || n.x > W) n.vx *= -1;
+      if (n.y < 0 || n.y > H) n.vy *= -1;
+    });
+    requestAnimationFrame(draw);
+  }
+  
+  resize();
+  createNodes(80);
+  draw();
+  window.addEventListener('resize', () => { resize(); createNodes(80); });
+  document.addEventListener('mousemove', e => {
+    const rect = canvas.getBoundingClientRect();
+    mouse.x = e.clientX - rect.left;
+    mouse.y = e.clientY - rect.top;
+  });
+})();
+
+// ─── TYPING EFFECT ───
+(function() {
+  const words = ['CRM Architect', 'AI Automation Builder', 'Digital Transformer', 'Systems Thinker', 'Technology Leader', 'Full Stack Developer', 'Startup Founder'];
+  const el = document.getElementById('typing-text');
+  let wi = 0, ci = 0, typing = true;
+  
+  function tick() {
+    const word = words[wi];
+    if (typing) {
+      ci++;
+      el.textContent = word.slice(0, ci);
+      if (ci >= word.length) { typing = false; setTimeout(tick, 1800); return; }
+    } else {
+      ci--;
+      el.textContent = word.slice(0, ci);
+      if (ci <= 0) { typing = true; wi = (wi + 1) % words.length; }
+    }
+    setTimeout(tick, typing ? 70 : 35);
+  }
+  setTimeout(tick, 1000);
+})();
+
+// ─── COUNTER ANIMATION ───
+function animateCounter(el) {
+  const target = parseInt(el.dataset.count);
+  const suffix = el.dataset.suffix || '+';
+  let current = 0;
+  const step = target / 50;
+  const timer = setInterval(() => {
+    current += step;
+    if (current >= target) { current = target; clearInterval(timer); }
+    el.textContent = Math.round(current) + (current >= target ? suffix : '');
+  }, 30);
+}
+
+// ─── SCROLL REVEAL ───
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(e => {
+    if (e.isIntersecting) {
+      e.target.classList.add('visible');
+      if (e.target.dataset.count) animateCounter(e.target);
+    }
+  });
+}, { threshold: 0.1 });
+
+document.querySelectorAll('.reveal, [data-count]').forEach(el => observer.observe(el));
+
+// ─── EASTER EGG ───
+let keyBuffer = '';
+document.addEventListener('keydown', e => {
+  keyBuffer += e.key.toLowerCase();
+  if (keyBuffer.length > 8) keyBuffer = keyBuffer.slice(-8);
+  if (keyBuffer.includes('mustafa')) {
+    keyBuffer = '';
+    openTerminal();
+  }
+});
+
+function openTerminal() {
+  const overlay = document.getElementById('terminal-overlay');
+  overlay.classList.add('active');
+  const body = document.getElementById('terminal-body');
+  body.innerHTML = '';
+  
+  const lines = [
+    { delay: 0, html: '<div class="t-line"><span class="t-prompt">→</span><span class="t-blue"> SYSTEM STATUS: <span style="color:#00FFAE">ONLINE</span></span></div>' },
+    { delay: 300, html: '<div style="height:8px"></div>' },
+    { delay: 600, html: '<div class="t-line"><span class="t-prompt">→</span><span class="t-muted"> NAME</span></div><div class="t-line" style="padding-left:16px"><span class="t-text" style="color:#fff;font-weight:500">Mustafa Tarig</span></div>' },
+    { delay: 900, html: '<div style="height:8px"></div><div class="t-line"><span class="t-prompt">→</span><span class="t-muted"> ROLE</span></div><div class="t-line" style="padding-left:16px"><span class="t-blue">Digital Transformation Manager</span></div>' },
+    { delay: 1200, html: '<div style="height:4px"></div><div class="t-line"><span class="t-prompt">→</span><span class="t-muted"> SPECIALIZATION</span></div><div style="padding-left:16px"><div class="t-line"><span style="color:#7B61FF">CRM Architecture</span></div><div class="t-line"><span style="color:#7B61FF">AI Automation</span></div><div class="t-line"><span style="color:#7B61FF">Enterprise Systems</span></div></div>' },
+    { delay: 1700, html: '<div style="height:8px"></div><div class="t-line"><span class="t-prompt">→</span><span class="t-muted"> LOCATION</span></div><div class="t-line" style="padding-left:16px"><span class="t-text">Dubai, UAE 🇦🇪</span></div>' },
+    { delay: 2000, html: '<div style="height:8px"></div><div class="t-line"><span class="t-prompt">→</span><span class="t-muted"> CURRENT MISSION</span></div><div class="t-line" style="padding-left:16px"><span style="color:#00FFAE">Building intelligent systems that scale businesses.</span></div>' },
+    { delay: 2400, html: '<div style="height:8px"></div><div class="t-line"><span class="t-prompt">→</span><span class="t-muted"> STATUS</span></div><div class="t-line" style="padding-left:16px"><span style="color:#fff;font-weight:700;font-size:15px">ALWAYS BUILDING ⚡</span></div>' },
+    { delay: 2800, html: '<div style="height:12px"></div><div class="t-cursor-line"><span class="t-muted" style="font-size:11px">Press ESC or click × to close</span></div>' },
+  ];
+  
+  lines.forEach(({ delay, html }) => {
+    setTimeout(() => {
+      body.innerHTML += html;
+    }, delay);
+  });
+}
+
+function closeTerminal() {
+  document.getElementById('terminal-overlay').classList.remove('active');
+}
+
+document.addEventListener('keydown', e => {
+  if (e.key === 'Escape') closeTerminal();
+});
+document.getElementById('terminal-overlay').addEventListener('click', e => {
+  if (e.target === e.currentTarget) closeTerminal();
+});
+
+// ─── HAMBURGER ───
+document.getElementById('hamburger').addEventListener('click', () => {
+  const links = document.querySelector('.nav-links');
+  if (links.style.display === 'flex') {
+    links.style.display = '';
+  } else {
+    links.style.cssText = 'display:flex;flex-direction:column;position:absolute;top:64px;left:0;right:0;background:#04070D;padding:24px 5vw;gap:20px;border-bottom:1px solid rgba(255,255,255,0.07);';
+  }
+});
+</script>
+</body>
+</html>
